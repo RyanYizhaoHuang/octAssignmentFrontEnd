@@ -8,7 +8,7 @@
 </nav> 
 <div class="container">
   <div class="row">
-    <div class="col-12 col-sm-6 col-lg-8">
+    <div class="col-lg-8 col-sm-12">
       <div class="float-right filter">
         <form class="form-inline my-2 my-lg-0 justify-content-right">
             <select id="inputState" class="form-control">
@@ -31,39 +31,27 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>25</td>
-            <td>Y</td>
-            <td>@mdo</td>            
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@mdo</td>                        
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td >Larry the Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>            
-            <td>@mdo</td>            
+          <tr *ngFor="let user of users" (click)="chooseUser(user)">
+            <th scope="row">{{ user.id }}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.preferences.color}}</td>
+            <td>{{user.preferences.food}}</td>            
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="col-6 col-lg-4">
+    <div class="col-lg-4 col-sm-12">
+        <div *ngIf="selectedUser != null" class="mx-auto">
+        <div class="user-card"><button type="button" class="btn btn-link" (click)="clearUser()"><i class="fa fa-window-close-o fa-lg" aria-hidden="true"></i></button></div>
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="http://via.placeholder.com/150x150?text=id" alt="Card image cap">
+            <img class="card-img-top" *ngIf="selectedUser.image" src="{{selectedUser.image}}" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">Name:</h5>
-              <h6>Age:</h6>
-              <p class="card-text">Preference</p>
+              <h5 class="card-title">{{selectedUser.name}}</h5>
+              <p class="card-text"><button type="button" class="btn btn-info">Detail</button></p>
             </div>
-          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
