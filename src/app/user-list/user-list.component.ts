@@ -38,4 +38,17 @@ export class UserListComponent{
       goToDetail(selectedUser : User){
         this.router.navigate(['/userdetail'],{queryParams:{'user':JSON.stringify(selectedUser)}});
       }
+
+      /**
+       * 
+       * @param event Sort user according to user select type
+       */
+      onSortUser(event){
+          const sortType = event.target.value;
+          if(sortType === 'Sort By...'){
+            return false;
+          }
+          this.users = this.dataSource.sortUser(sortType);
+      }
+      
 }

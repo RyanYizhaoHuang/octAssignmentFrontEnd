@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { User } from "./user.model";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/from";
+import { HelperClass } from "./helper.service";
 
 
 /**
@@ -9,6 +10,8 @@ import "rxjs/add/observable/from";
  */
 @Injectable()
 export class StaticUserDataSource{
+
+    constructor(private helper : HelperClass){}
     private users : User[] = [
         {
             id: 1,
@@ -114,4 +117,49 @@ export class StaticUserDataSource{
         getUsers() : Observable<User[]>{
             return Observable.from([this.users]);
         }
+
+        //sort user by type
+        sortUser( sortType : string){
+
+            switch (sortType){
+                case 'name': 
+                    return this.users.sort((a,b)=>{
+                        let nameA = a.name.toUpperCase(); // ignore upper and lowercase
+                        let nameB = b.name.toUpperCase(); // ignore upper and lowercase
+                        if (nameA < nameB) {
+                            return -1;
+                        }
+                        if (nameA > nameB) {
+                            return 1;
+                        }
+                        // names must be equal
+                        return 0;
+                        }); 
+                case 'age' :
+                console.log('age');
+                    return this.users.sort((a,b)=>{
+                        if(a.age == null){
+                            return 1;
+                        }
+                        return a.age - b.age;
+                    });
+                case 'preferences' :
+                return this.users.sort((a,b)=>{
+                    let preA = a.preferences.color.toUpperCase();
+                    let preB = b.preferences.color.toUpperCase();
+                    if (preA < preB) {
+                        return -1;
+                    }
+                    if (preA > preB) {
+                        return 1;
+                    }
+                    // names must be equal
+                    return 0;
+                    }); 
+                default:
+                break;
+
+            }
+        }
+
 }

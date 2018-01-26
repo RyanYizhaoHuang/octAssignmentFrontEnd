@@ -3,11 +3,11 @@
           <div class="col-12 col-lg-8 col-sm-12">
             <div class="float-right filter">
               <form class="form-inline my-2 my-lg-0 justify-content-right">
-                  <select id="inputState" class="form-control">
+                  <select id="inputState" (change)="onSortUser($event)" class="form-control">
                     <option selected>Sort By...</option>
-                    <option>name</option>
-                    <option>age</option>
-                    <option>preference</option>              
+                    <option value="name">name</option>
+                    <option value="age">age</option>
+                    <option value="preferences">preferences</option>              
                   </select>
                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
