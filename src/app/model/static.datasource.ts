@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { User } from "./user.model";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/from";
-import { HelperClass } from "./helper.service";
 
 
 /**
@@ -11,7 +10,6 @@ import { HelperClass } from "./helper.service";
 @Injectable()
 export class StaticUserDataSource{
 
-    constructor(private helper : HelperClass){}
     private users : User[] = [
         {
             id: 1,
@@ -161,5 +159,10 @@ export class StaticUserDataSource{
 
             }
         }
-
+        //search user by user input
+        searchUser(userInput : string){
+            return this.users.filter( user => 
+                JSON.stringify(user).toUpperCase().indexOf(userInput.toUpperCase()) !== -1
+            );
+        }
 }

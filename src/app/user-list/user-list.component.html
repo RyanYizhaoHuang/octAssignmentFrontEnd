@@ -9,8 +9,8 @@
                     <option value="age">age</option>
                     <option value="preferences">preferences</option>              
                   </select>
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  <input class="form-control mr-sm-2" #searchUser type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="onSearchUser(searchUser.value)">Search</button>
                 </form>
             </div>
             <table class="table table-hover">
@@ -45,5 +45,8 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="row">
+            <a class="btn btn-primary" target="blank" href="https://github.com/RyanYizhaoHuang/octAssignmentFrontEnd" role="button">Source code</a>
         </div>
 </div>

@@ -40,8 +40,8 @@ export class UserListComponent{
       }
 
       /**
-       * 
-       * @param event Sort user according to user select type
+       * Sort user according to user select type
+       * @param event 
        */
       onSortUser(event){
           const sortType = event.target.value;
@@ -50,5 +50,14 @@ export class UserListComponent{
           }
           this.users = this.dataSource.sortUser(sortType);
       }
+      /**
+       * 
+       * @param userInput search user according to user input
+       */
+      onSearchUser(userInput : string){
+        this.users = this.dataSource.searchUser(userInput);
+      }
+
+      
       
 }
