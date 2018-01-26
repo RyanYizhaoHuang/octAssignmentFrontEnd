@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="card text-center">
+                <div class="card-header">
+                  Ontario College Of Teacher
+                </div>
+                <div class="card-body">
+                  <img class="card-img-top" *ngIf="user.image" src="{{user.image}}" alt="Card image cap">
+                  <h5 class="card-title">{{user.name}}</h5>
+                  <p class="card-text">{{user.age}}</p>                  
+                  <p class="card-text">{{user.preferences.color}} {{user.preferences.food}}</p>
+                  <a href="#" class="btn btn-primary" [routerLink]="['/users']">Go back</a>
+                </div>
+                <div class="card-footer text-muted">
+                  2 days ago
+                </div>
+    </div>
+</div>

@@ -1,58 +1,6 @@
 <nav class="navbar navbar-light justify-content-between nav-bg">
   <a class="navbar-brand" href="https://www.oct.ca/">
   <img src="https://www.oct.ca/i/img/logo2x.png" alt="Ontario College of Teachers logo" width="104" height="36"></a>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-Light my-2 my-sm-0" type="submit">Search</button>
-  </form>
-</nav> 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-sm-12">
-      <div class="float-right filter">
-        <form class="form-inline my-2 my-lg-0 justify-content-right">
-            <select id="inputState" class="form-control">
-              <option selected>Sort By...</option>
-              <option>name</option>
-              <option>age</option>
-              <option>preference</option>              
-            </select>
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-      </div>
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Age</th>
-            <th scope="col" colspan="2">Preferences</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of users" (click)="chooseUser(user)">
-            <th scope="row">{{ user.id }}</th>
-            <td>{{user.name}}</td>
-            <td>{{user.age}}</td>
-            <td>{{user.preferences.color}}</td>
-            <td>{{user.preferences.food}}</td>            
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-lg-4 col-sm-12">
-        <div *ngIf="selectedUser != null" class="mx-auto">
-        <div class="user-card"><button type="button" class="btn btn-link" (click)="clearUser()"><i class="fa fa-window-close-o fa-lg" aria-hidden="true"></i></button></div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" *ngIf="selectedUser.image" src="{{selectedUser.image}}" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{selectedUser.name}}</h5>
-              <p class="card-text"><button type="button" class="btn btn-info">Detail</button></p>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</nav>
+<router-outlet></router-outlet>
 

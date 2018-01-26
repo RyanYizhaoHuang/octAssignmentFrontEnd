@@ -1,0 +1,17 @@
+.filter{
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+select{
+    margin-right: 8px;
+}
+
+thead{
+    background-color: #068edb;
+    color: azure;        
+}
+
+.user-card{
+    margin-top: 24px;
+}
