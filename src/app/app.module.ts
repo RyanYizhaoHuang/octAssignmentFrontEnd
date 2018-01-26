@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { StaticUserDataSource } from './model/static.datasource';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [StaticUserDataSource],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

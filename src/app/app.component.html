@@ -1,8 +1,70 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<nav class="navbar navbar-light justify-content-between nav-bg">
+  <a class="navbar-brand" href="https://www.oct.ca/">
+  <img src="https://www.oct.ca/i/img/logo2x.png" alt="Ontario College of Teachers logo" width="104" height="36"></a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-Light my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav> 
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-lg-8">
+      <div class="float-right filter">
+        <form class="form-inline my-2 my-lg-0 justify-content-right">
+            <select id="inputState" class="form-control">
+              <option selected>Sort By...</option>
+              <option>name</option>
+              <option>age</option>
+              <option>preference</option>              
+            </select>
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col" colspan="2">Preferences</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>25</td>
+            <td>Y</td>
+            <td>@mdo</td>            
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td>@mdo</td>                        
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td >Larry the Bird</td>
+            <td>@twitter</td>
+            <td>@mdo</td>            
+            <td>@mdo</td>            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-6 col-lg-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="http://via.placeholder.com/150x150?text=id" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Name:</h5>
+              <h6>Age:</h6>
+              <p class="card-text">Preference</p>
+            </div>
+          </div>
+    </div>
+  </div>
 </div>
-<h2>OCT Assignment</h2>
 

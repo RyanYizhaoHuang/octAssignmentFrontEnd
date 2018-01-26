@@ -1,0 +1,21 @@
+.nav-bg{
+        background-color: #068edb;
+}
+
+.filter{
+        margin-top: 24px;
+        margin-bottom: 16px;
+}
+
+select{
+        margin-right: 8px;
+}
+
+thead{
+        background-color: #068edb;
+        color: azure;        
+}
+
+.card{
+        margin-top: 24px;
+}
